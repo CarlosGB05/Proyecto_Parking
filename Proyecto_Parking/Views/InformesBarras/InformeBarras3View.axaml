@@ -1,0 +1,73 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
+             Height="830" Width="1750"
+             x:DataType="viewModels:MainWindowViewModel"
+             x:Class="InformeEventos.Views.BarrasView.InformeBarras3View"
+             Background="BlueViolet">
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>
+    <Grid ShowGridLines="False" Width="800"
+          Margin="20" HorizontalAlignment="Center">
+
+        <!-- ENUNCIADO -->
+        <Border Grid.Column="0"
+                Padding="20"
+                CornerRadius="8"
+                Height="700"
+                Background="WhiteSmoke">
+
+            <StackPanel Spacing="12">
+
+                <TextBlock Text="Informe gráfico 3 · Total Clientes por Parking"
+                           FontSize="23"
+                           FontWeight="Bold"
+                           Foreground="Black"
+                           HorizontalAlignment="Center"/>
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="16"
+                           Foreground="DimGray"
+                           Text="Este informe presenta un gráfico de barras comparativo que muestra los ingresos generados por los festivales según su estado." />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="16"
+                           Foreground="DimGray"
+                           Text="Permite analizar diferencias económicas entre festivales programados, cancelados o finalizados." />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="16"
+                           Foreground="DimGray"
+                           Text="El informe admite filtros opcionales para acotar el análisis por ubicación y rango de fechas." />
+
+                <TextBlock Text="Filtros del informe"
+                           FontSize="20"
+                           FontWeight="Bold" 
+                           Foreground="Black"
+                           Margin="0,30,0,0"/>
+
+                <!-- Placeholder filtros (no activos aún) -->
+                <TextBlock Text="Este informe no requiere filtros."
+                           FontSize="16"
+                           Foreground="DimGray" />
+
+                <Separator />
+                
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Button Content="Generar informe" FontSize="18"
+                            Width="170" Height="40" Margin="0,0,10,0"
+                            Command="{Binding InformeBarras3Command}" />
+                </StackPanel>
+                
+            </StackPanel>
+        </Border>
+
+    </Grid>
+
+</UserControl>

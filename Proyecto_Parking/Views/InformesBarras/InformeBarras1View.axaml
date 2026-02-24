@@ -1,0 +1,81 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels1="clr-namespace:Proyecto_Parking.ViewModels"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="450"
+             x:DataType="viewModels1:MainWindowViewModel"
+             x:Class="InformeEventos.Views.BarrasView.InformeBarras1View">
+    <Design.DataContext>
+        <viewModels1:MainWindowViewModel />
+    </Design.DataContext>
+    <Grid ColumnDefinitions="*,*"
+          Margin="20">
+
+        <!-- ENUNCIADO -->
+        <Border Grid.Column="0"
+                Padding="20"
+                CornerRadius="8"
+                Background="WhiteSmoke">
+
+            <StackPanel Spacing="12">
+
+                <TextBlock Text="Informe gráfico 1 · Ingresos por festival"
+                           FontSize="18"
+                           FontWeight="Bold" />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="14"
+                           Foreground="DimGray"
+                           Text="Este informe muestra un gráfico de barras con los ingresos totales generados por cada festival." />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="14"
+                           Foreground="DimGray"
+                           Text="No se aplican filtros. El objetivo es obtener una visión global y comparativa del impacto económico de los festivales." />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="14"
+                           Foreground="DimGray"
+                           Text="Cada barra representa un festival y su altura indica el total de ingresos obtenidos." />
+
+            </StackPanel>
+        </Border>
+
+        <!-- ACCIONES -->
+        <Border Grid.Column="1"
+                Padding="20"
+                CornerRadius="8"
+                Background="WhiteSmoke"
+                BorderBrush="LightGray"
+                BorderThickness="1">
+
+            <StackPanel Spacing="16">
+
+                <TextBlock Text="Opciones del informe"
+                           FontSize="16"
+                           FontWeight="Bold" />
+
+                <TextBlock Text="Este informe no requiere filtros."
+                           FontSize="13"
+                           Foreground="DimGray" />
+
+                <Separator />
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+
+                    <Button Content="Generar gráfico"
+                            Width="150"
+                            Height="36"
+                            Command="{Binding GraficoIngresosPorFestivalCommand}" />
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+
+</UserControl>

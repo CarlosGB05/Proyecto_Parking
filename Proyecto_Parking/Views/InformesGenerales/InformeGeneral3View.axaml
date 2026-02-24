@@ -1,0 +1,75 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
+             Height="830" Width="1750"
+             x:DataType="viewModels:MainWindowViewModel"
+             x:Class="InformeEventos.Views.InformesViews.InformeGeneral3View"
+             Background="BlueViolet">
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>
+    
+    <Grid ShowGridLines="False" Width="800"
+          Margin="20" HorizontalAlignment="Center">
+
+        <!-- ===================== -->
+        <!-- COLUMNA IZQUIERDA -->
+        <!-- ENUNCIADO -->
+        <!-- ===================== -->
+        <Border Grid.Column="0"
+                Padding="20"
+                CornerRadius="8"
+                Height="700"
+                Background="WhiteSmoke">
+
+            <StackPanel Spacing="12">
+
+                <TextBlock Text="Informe 3 · Listado General de Parkings"
+                           FontSize="23" HorizontalAlignment="Center"
+                           FontWeight="Bold" 
+                           Foreground="Black"/>
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="16"
+                           Foreground="DimGray"
+                           Text="Este informe muestra la información detallada de una entrada concreta, identificada mediante su código o identificador." />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="16"
+                           Foreground="DimGray"
+                           Text="El informe permite consultar todos los datos asociados a la entrada, incluyendo información del festival, del asistente y de la compra realizada." />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="16"
+                           Text="Este tipo de informe es útil para tareas de verificación, control de accesos o consulta individual de entradas."
+                           Foreground="DimGray" />
+                
+                <TextBlock Text="Filtros del informe"
+                           FontSize="20"
+                           FontWeight="Bold" 
+                           Foreground="Black"
+                           Margin="0,30,0,0"/>
+
+                <!-- Placeholder filtros (no activos aún) -->
+                <TextBlock Text="Este informe no requiere filtros."
+                           FontSize="16"
+                           Foreground="DimGray" />
+
+                <Separator />
+                
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Button Content="Generar informe" FontSize="18"
+                            Width="170" Height="40" Margin="0,0,10,0"
+                            Command="{Binding InformesGenerales3Command}" />
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</UserControl>

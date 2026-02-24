@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Proyecto_Parking/App.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/BarrasView/Ejemplo1BarrasView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/BarrasView/Ejemplo2BarrasView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/BarrasView/Ejemplo3BarrasView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/BarrasView/Ejemplo4BarrasView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/BarrasView/Ejemplo5BarrasView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/CircularView/Ejemplo1CircularView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/CircularView/Ejemplo2CircularView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/Dialogs/FicheroPDF.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesBarras/InformeBarras1View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesBarras/InformeBarras3View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesCirculares/InformeCircular3View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesGenerales/Ejemplo1InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesGenerales/Ejemplo2InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesGenerales/Ejemplo3InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesGenerales/Ejemplo4InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesGenerales/InformeGeneral1View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesGenerales/InformeGeneral2View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesGenerales/InformeGeneral3View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesGenerales/InformeGeneral4View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesLineas/InformeCircular1View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesLineas/InformeLineas2View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesLineas/InformeLineas3View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesViews/Ejemplo1InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesViews/Ejemplo2InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesViews/Ejemplo3InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesViews/Ejemplo4InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesViews/Ejemplo5InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/MainWindow.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

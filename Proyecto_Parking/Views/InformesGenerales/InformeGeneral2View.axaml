@@ -1,0 +1,86 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
+             Height="830" Width="1750"
+             x:DataType="viewModels:MainWindowViewModel"
+             x:Class="InformeEventos.Views.InformesViews.InformeGeneral2View"
+             Background="BlueViolet">
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>
+    
+    <Grid ShowGridLines="False" Width="800"
+          Margin="20" HorizontalAlignment="Center">
+
+        <!-- ===================== -->
+        <!-- COLUMNA IZQUIERDA -->
+        <!-- ENUNCIADO -->
+        <!-- ===================== -->
+        <Border Grid.Column="0"
+                Padding="20"
+                CornerRadius="8"
+                Height="700"
+                Background="WhiteSmoke">
+
+            <StackPanel Spacing="12">
+
+                <TextBlock Text="Informe 2 · Vehiculos segun su Marca"
+                           FontSize="23"
+                           FontWeight="Bold"
+                           Foreground="Black"
+                           HorizontalAlignment="Center"/>
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="16"
+                           Foreground="DimGray"
+                           Text="Este informe muestra el listado de grupos o artistas que participan en un festival concreto, junto con la información detallada de sus actuaciones." />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="16"
+                           Foreground="DimGray"
+                           Text="Se incluyen datos como el género musical, la fecha de actuación, la hora de inicio y el escenario asignado a cada grupo." />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="16"
+                           Foreground="DimGray"
+                           Text="El objetivo es ofrecer una visión clara de la programación artística del festival seleccionado." />
+
+                <TextBlock Text="Filtros del informe"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="Black"
+                           Margin="0,30,0,0"/>
+
+                <!-- Festival -->
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Marca del Vehiculo"
+                               FontSize="16" Foreground="Black" 
+                               Margin="0,5,0,15"
+                               HorizontalAlignment="Center"/>
+                    <ComboBox PlaceholderText="     Selecciona Marca del Vehiculo"
+                              Background="Black" Width="450" Height="45"
+                              Name="ComboMarcas" CornerRadius="20" FontSize="18"
+                              ItemsSource="{Binding MarcaVehiculos}"/>
+                </StackPanel>
+
+                <Separator />
+
+                <!-- Botón -->
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+
+                    <Button Content="Generar informe" FontSize="18"
+                            Width="170" Height="40" Margin="0,0,10,0"
+                            Command="{Binding InformesGenerales2Command}" 
+                            CommandParameter="{Binding ElementName=ComboMarcas, Path=SelectedItem}"/>
+                </StackPanel>
+                
+            </StackPanel>
+        </Border>
+    </Grid>
+
+</UserControl>

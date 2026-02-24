@@ -1,0 +1,94 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="450"
+             x:DataType="viewModels:MainWindowViewModel"
+             x:Class="InformeEventos.Views.CircularView.InformeCircular2View">
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>
+    <Grid ColumnDefinitions="*,*"
+          Margin="20">
+
+    <!-- ===================== -->
+    <!-- COLUMNA IZQUIERDA -->
+    <!-- ENUNCIADO -->
+    <!-- ===================== -->
+    <Border Grid.Column="0"
+            Padding="20"
+            CornerRadius="8"
+            Background="WhiteSmoke">
+
+        <StackPanel Spacing="12">
+
+            <TextBlock Text="Informe gráfico · Distribución de grupos por género musical"
+                       FontSize="18"
+                       FontWeight="Bold"/>
+
+            <TextBlock TextWrapping="Wrap"
+                       FontSize="14"
+                       Foreground="DimGray"
+                       Text="Este informe presenta un gráfico circular que muestra la proporción de grupos registrados según su género musical." />
+
+            <TextBlock TextWrapping="Wrap"
+                       FontSize="14"
+                       Foreground="DimGray"
+                       Text="El usuario puede aplicar un filtro para limitar el análisis a los grupos de un país concreto." />
+
+            <TextBlock TextWrapping="Wrap"
+                       FontSize="14"
+                       Foreground="DimGray"
+                       Text="Cada sector del gráfico representa un género musical diferente." />
+
+        </StackPanel>
+    </Border>
+
+    <!-- ===================== -->
+    <!-- COLUMNA DERECHA -->
+    <!-- FILTROS -->
+    <!-- ===================== -->
+    <Border Grid.Column="1"
+            Padding="20"
+            CornerRadius="8"
+            Background="WhiteSmoke"
+            BorderBrush="LightGray"
+            BorderThickness="1">
+
+        <StackPanel Spacing="16">
+
+            <TextBlock Text="Filtros del informe"
+                       FontSize="16"
+                       FontWeight="Bold"/>
+
+            <!-- País -->
+            <StackPanel Spacing="4">
+                <TextBlock Text="País del grupo"
+                           FontSize="13"
+                           Foreground="DimGray"/>
+                <ComboBox PlaceholderText="Seleccionar país"
+                          Name="Generos"
+                          ItemsSource="{Binding GenerosMusicales}"/>
+            </StackPanel>
+
+            <Separator/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+
+                <Button Content="Generar gráfico"
+                        Width="150"
+                        Height="36"
+                        Command="{Binding GraficoGenerosMusicalesCommand}"
+                        CommandParameter="{Binding ElementName=Generos,Path=SelectedItem}"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Border>
+
+</Grid>
+
+</UserControl>

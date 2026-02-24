@@ -1,0 +1,25 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Proyecto_Parking.ViewModels"
+             mc:Ignorable="d" 
+             x:Class="Proyecto_Parking.Views.Dialogs.FicheroPDF"
+             x:DataType="vm:MainWindowViewModel">
+    
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Grid RowDefinitions="*,100" Background="Transparent">
+        <WebView Url="{Binding Url}"
+                 Width="1300" Height="750"/>
+        
+        <StackPanel Grid.Row="1" Background="Black">
+            <Button Content="CERRAR" FontSize="18" Width="170" Height="40"
+                    HorizontalAlignment="Center" Margin="0,30,0,0"
+                    Command="{Binding OcultarPDFCommand}"
+                    Background="BlueViolet"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,87 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels1="clr-namespace:Proyecto_Parking.ViewModels"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="450"
+             x:DataType="viewModels1:MainWindowViewModel"
+             x:Class="InformeEventos.Views.BarrasView.InformeBarras2View">
+    <Design.DataContext>
+        <viewModels1:MainWindowViewModel />
+    </Design.DataContext>
+    <Grid ColumnDefinitions="*,*"
+          Margin="20">
+
+        <!-- ENUNCIADO -->
+        <Border Grid.Column="0"
+                Padding="20"
+                CornerRadius="8"
+                Background="WhiteSmoke">
+
+            <StackPanel Spacing="12">
+
+                <TextBlock Text="Informe gráfico 2 · Entradas vendidas por tipo"
+                           FontSize="18"
+                           FontWeight="Bold" />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="14"
+                           Foreground="DimGray"
+                           Text="Este informe representa mediante un gráfico de barras el número de entradas vendidas por tipo para un festival concreto." />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="14"
+                           Foreground="DimGray"
+                           Text="El usuario debe seleccionar un festival para generar el gráfico correspondiente." />
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="14"
+                           Foreground="DimGray"
+                           Text="Cada barra muestra la cantidad de entradas vendidas de un tipo específico (general, VIP, abono)." />
+
+            </StackPanel>
+        </Border>
+
+        <!-- FILTROS -->
+        <Border Grid.Column="1"
+                Padding="20"
+                CornerRadius="8"
+                Background="WhiteSmoke"
+                BorderBrush="LightGray"
+                BorderThickness="1">
+
+            <StackPanel Spacing="16">
+
+                <TextBlock Text="Filtros del informe"
+                           FontSize="16"
+                           FontWeight="Bold" />
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Festival"
+                               FontSize="13"
+                               Foreground="DimGray" />
+                    <ComboBox PlaceholderText="Seleccionar festival"
+                              Name="NombreFest"
+                              ItemsSource="{Binding NombreFestivales}"/>
+                </StackPanel>
+
+                <Separator />
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+
+                    <Button Content="Generar gráfico"
+                            Width="150"
+                            Height="36"
+                            Command="{Binding GraficoEntradasPorTipoCommand}"
+                            CommandParameter="{Binding ElementName=NombreFest,Path=SelectedItem}"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+
+</UserControl>

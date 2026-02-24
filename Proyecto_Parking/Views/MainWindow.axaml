@@ -1,0 +1,420 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Proyecto_Parking.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:informesViews="clr-namespace:InformeEventos.Views.InformesViews"
+        xmlns:barrasView="clr-namespace:InformeEventos.Views.BarrasView"
+        xmlns:circularView="clr-namespace:InformeEventos.Views.CircularView"
+        xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+        WindowState="Maximized"
+        Width="1920" Height="1080"
+        x:Class="Proyecto_Parking.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Proyecto_Parking">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Interaction.Behaviors>
+        <EventTriggerBehavior EventName="Loaded">
+            <InvokeCommandAction Command="{Binding CargarDesplegablesCommand}" />
+        </EventTriggerBehavior>
+    </Interaction.Behaviors>
+
+    <Grid>
+        <dialogHostAvalonia:DialogHost Identifier="pdf"
+                                       CloseOnClickAway="False"
+                                       ZIndex="1"
+                                       Width="1300" Height="850">
+            <dialogHostAvalonia:DialogHost.Content/>
+        </dialogHostAvalonia:DialogHost>
+        <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        
+        
+        
+        <TabControl TabStripPlacement="Top">
+            <TabControl.Items>
+                <TabItem Height="100">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <avalonia:MaterialIcon Kind="Table"
+                                                   Width="30"
+                                                   Height="30" />
+                            <TextBlock Classes="Centered"
+                                       Text="Informes Generales" 
+                                       Margin="10,4,0,0"
+                                       FontSize="22"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabControl TabStripPlacement="Left">
+                        <TabControl.Items>
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="User"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20"/>
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Clientes"
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <informesViews:InformeGeneral1View />
+                            </TabItem>
+
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="Car"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Vehiculos"
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <informesViews:InformeGeneral2View />
+                            </TabItem>
+                            
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="Parking"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20"/>
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Parking" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <informesViews:InformeGeneral3View />
+                            </TabItem>
+                            
+                            
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="Garage"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Otros" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <informesViews:InformeGeneral4View />
+                            </TabItem>
+                            
+                        </TabControl.Items>
+                    </TabControl>
+                </TabItem>
+                
+                <TabItem Height="100">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <avalonia:MaterialIcon Kind="ChartBar"
+                                                   Width="30"
+                                                   Height="30" />
+                            <TextBlock Classes="Centered"
+                                       Text="Informes Gráficos de Barras" 
+                                       Margin="10,4,0,0"
+                                       FontSize="22"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabControl TabStripPlacement="Left">
+                        <TabControl.Items>
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="User"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Clientes" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <barrasView:InformeBarras1View/>
+                            </TabItem>
+
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="Car"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Vehiculos" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <barrasView:InformeBarras2View/>
+                            </TabItem>
+                            
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="Parking"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Parking" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <barrasView:InformeBarras3View/>
+                            </TabItem>
+                            
+                        </TabControl.Items>
+                    </TabControl>
+
+                </TabItem>
+
+                <TabItem Height="100">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <avalonia:MaterialIcon Kind="ChartPie" 
+                                                   Width="30"
+                                                   Height="30"/>
+                            <TextBlock Classes="Centered"
+                                       Text="Informes Gráficos Circulares" 
+                                       Margin="10,4,0,0"
+                                       FontSize="22"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabControl TabStripPlacement="Left">
+                        <TabControl.Items>
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="User"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Clientes" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <circularView:InformeCircular1View/>
+                            </TabItem>
+
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="Car"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Vehiculos" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <circularView:InformeCircular2View/>
+                            </TabItem>
+                            
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="Parking"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Parking" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <circularView:InformeCircular3View/>
+                            </TabItem>
+                        </TabControl.Items>
+                    </TabControl>
+
+                </TabItem>
+
+                <TabItem Height="100">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <avalonia:MaterialIcon Kind="ChartLine" 
+                                                   Width="30"
+                                                   Height="30"/>
+                            <TextBlock Classes="Centered"
+                                       Text="Informes Gráficos de Líneas" 
+                                       Margin="10,4,0,0"
+                                       FontSize="22"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabControl TabStripPlacement="Left">
+                        <TabControl.Items>
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="User"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Clientes" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <circularView:InformeLineas1View/>
+                            </TabItem>
+                            
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="Car"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Vehiculos" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <circularView:InformeLineas2View/>
+                            </TabItem>
+                            
+                            <TabItem Width="170" Height="100">
+                                <TabItem.Header>
+                                    <Border Background="BlueViolet" 
+                                            Width="130" Height="60"
+                                            CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <avalonia:MaterialIcon Kind="Parking"
+                                                                   Width="20"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="20" />
+                                            <TextBlock Classes="Centered"
+                                                       VerticalAlignment="Center"
+                                                       Text="Parking" 
+                                                       FontSize="17"
+                                                       Margin="7,0,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem.Header>
+                                <circularView:InformeLineas3View/>
+                            </TabItem>
+                            
+                        </TabControl.Items>
+                    </TabControl>    
+                </TabItem>
+
+            </TabControl.Items>
+        </TabControl>
+        <Grid Grid.Row="1"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+            <TextBlock FontSize="30"
+                Text="Proyecto Parking realizado por: Carlos Gómez de la Torre Bretón"/>
+        </Grid>
+    </Grid>
+    </Grid>
+    
+
+</Window>
