@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Avalonia.Collections;
 using Newtonsoft.Json;
+using Proyecto_Parking.Models;
 
 namespace InformeEventos.Services;
 
@@ -25,13 +26,29 @@ public class N8NService
         return JsonConvert.DeserializeObject<AvaloniaList<string>>(listaString);
     }
     
-    public async Task<AvaloniaList<string>?> ObtenerListaParking()
+    public async Task<AvaloniaList<Parking>?> ObtenerListaParking()
     {
         var request = new HttpRequestMessage(HttpMethod.Get, "listaParking");
         
         var response = await client.SendAsync(request);
         var listaString = await response.Content.ReadAsStringAsync();
-        return JsonConvert.DeserializeObject<AvaloniaList<string>>(listaString);
+        return JsonConvert.DeserializeObject<AvaloniaList<Parking>>(listaString);
+    }
+    
+    public async Task<AvaloniaList<Cliente>?> ObtenerCantidadParking(string nomb)                      // el ? significa que sigue el metodo aunq reciba algun null
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "1864de8f-1421-4552-b777-31fa58c8d508/cantidadParking/"+nomb);
+        var response = await client.SendAsync(request);
+        var listaString = await response.Content.ReadAsStringAsync();
+        return JsonConvert.DeserializeObject<AvaloniaList<Cliente>>(listaString);
+    }
+    
+    public async Task<AvaloniaList<Vehiculo>?> ObtenerListaVehiculos(string nomb)                      // el ? significa que sigue el metodo aunq reciba algun null
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "1864de8f-1421-4552-b777-31fa58c8d508/cantidadParking/"+nomb);
+        var response = await client.SendAsync(request);
+        var listaString = await response.Content.ReadAsStringAsync();
+        return JsonConvert.DeserializeObject<AvaloniaList<Vehiculo>>(listaString);
     }
     
     

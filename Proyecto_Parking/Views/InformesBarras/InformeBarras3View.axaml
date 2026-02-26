@@ -23,7 +23,7 @@
 
             <StackPanel Spacing="12">
 
-                <TextBlock Text="Informe gráfico 3 · Total Clientes por Parking"
+                <TextBlock Text="Informe Barras 3 · Total Clientes por Parking"
                            FontSize="23"
                            FontWeight="Bold"
                            Foreground="Black"

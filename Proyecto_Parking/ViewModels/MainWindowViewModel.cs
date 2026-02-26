@@ -5,6 +5,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DialogHostAvalonia;
 using InformeEventos.Services;
+using Proyecto_Parking.Models;
 using Proyecto_Parking.Views.Dialogs;
 
 namespace Proyecto_Parking.ViewModels;
@@ -16,9 +17,16 @@ public partial class MainWindowViewModel : ViewModelBase
     
     [ObservableProperty] private bool seMuestraPDF;
     [ObservableProperty] private AvaloniaList<string>? marcaVehiculos = new();
-    [ObservableProperty] private AvaloniaList<string>? listaParking = new();
+    [ObservableProperty] private AvaloniaList<Parking>? listaParking = new();
+    [ObservableProperty] private Parking parkingSeleccionado = new();
     [ObservableProperty] private DateTime fechaInicio;
     [ObservableProperty] private DateTime fechaFin;
+    [ObservableProperty] private string texto = string.Empty;
+    [ObservableProperty] private string textoV = string.Empty;
+    [ObservableProperty] private Cliente clienteSeleccionado = new();
+    [ObservableProperty] private AvaloniaList<Cliente> listaClientes = new();
+    [ObservableProperty] private AvaloniaList<Vehiculo> listaVehiculos = new();
+    [ObservableProperty] private Vehiculo vehiculoSeleccionado = new();
     
     [ObservableProperty] private AvaloniaList<string>? listaGrupos = new();
     [ObservableProperty] private AvaloniaList<string>? nombreFestivales = new();
@@ -86,11 +94,27 @@ public partial class MainWindowViewModel : ViewModelBase
     
     // INFORMES GENERALES 4: INFO ESTACIONAMIENTOS POR FECHAS Y PARKING
     [RelayCommand]
-    public async Task InformesGenerales4(string marca)
+    public async Task InformesGenerales4()
     {
-        Url = "http://localhost:10000/parking/informacionEstacionamiento/"
-              +Uri.EscapeDataString(marca) +"/"+Uri.EscapeDataString(fechaInicio.ToString("yyyy/MM/dd"))
-              +"/"+Uri.EscapeDataString(fechaFin.ToString("yyyy/MM/dd"));
+        Url = "http://localhost:10000/parking/informacionEstacionamiento/"+ParkingSeleccionado.Id;
+        Console.WriteLine(Url);
+        AbrirWebView();
+    }
+    
+    // INFORMES BARRAS 1: TOP 10 COSTO TOTAL DE CLIENTES GASTADO EN PARKING
+    [RelayCommand]
+    public async Task InformeBarras1()
+    {
+        Url = "http://localhost:10000/parking/costoParking";
+        Console.WriteLine(Url);
+        AbrirWebView();
+    }
+    
+    // INFORMES BARRAS 2: INGRESOS TOTALES DE VEHICULOS POR MARCA
+    [RelayCommand]
+    public async Task InformeBarras2()
+    {
+        Url = "http://localhost:10000/parking/ingresosVehiculos";
         Console.WriteLine(Url);
         AbrirWebView();
     }
@@ -104,102 +128,78 @@ public partial class MainWindowViewModel : ViewModelBase
         AbrirWebView();
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-
-    // Ejemplo 2
+    // INFORMES QUESITOS 1: CANTIDAD VECES QUE UN CLIENTE USA CADA PARKING
     [RelayCommand]
-    public async Task EntradaPorID(string id)
+    public async Task InformeCircular1()
     {
-        Url = "http://localhost:10000/reports/getEntrada/"+id;
+        Url = "http://localhost:10000/parking/cantidadParking/"+ClienteSeleccionado.Id;
         Console.WriteLine(Url);
-        SeMuestraPDF = true;
-    }
-
-    // Ejemplo 3
-    [RelayCommand]
-    public async Task FestivalesFiltos()
-    {
-        
-    }
-
-    //EJEMPLO 4 INFORMES
-    [RelayCommand]
-    public async Task GruposPorFestival(string grupo)
-    {
-        Url = "http://localhost:10000/reports/getNombreGrupo/"+Uri.EscapeDataString(grupo);
-        Console.WriteLine(Url);
-        SeMuestraPDF = true;
-    }
-
-    // EJEMPLO 5 INFORMES
-    [RelayCommand]
-    public async Task EntradasPorFestival()
-    {
-      
-    }
-
-    /**
-     * EJEMPLOS GRÁFICOS DE BARRAS
-     *
-     */
-    // Ejemplo 1
-    [RelayCommand]
-    public async Task GraficoIngresosPorFestival()
-    {
-        Url = "http://localhost:10000/reports/ingresosFestivales";
-        Console.WriteLine(Url);
-        SeMuestraPDF = true;
-    }
-
-    // Ejemplo 2
-    [RelayCommand]
-    public async Task GraficoEntradasPorTipo(string tipo)
-    {
-        Url = "http://localhost:10000/reports/getFestivalTipo/"+Uri.EscapeDataString(tipo);
-        Console.WriteLine(Url);
-        SeMuestraPDF = true;
-    }
-
-    // Ejemplo 3
-    [RelayCommand]
-    public async Task GraficoIngresosPorFestivalFechas()
-    {
-        
-    }
-
-    // Ejemplo 4 -
-    [RelayCommand]
-    public async Task GraficoIngresosPorTipoGlobal()
-    {
-        
-    }
-
-    // Ejemplo 5 -
-    [RelayCommand]
-    public async Task GraficoIngresosPorTipoFestival()
-    {
-      
+        AbrirWebView();
     }
     
-    /**
-     * EJEMPLOS GRÁFICOS DE QUESITOS
-     *
-     */
-    // Ejemplo 2
     [RelayCommand]
-    public async Task GraficoGenerosMusicales(string pais)
+    public async Task CargarCantidadParkingAsync()
     {
-        Url = "http://localhost:10000/reports/getGeneroMusical/"+Uri.EscapeDataString(pais);
-        Console.WriteLine(Url);
-        SeMuestraPDF = true;
+        if (!String.IsNullOrWhiteSpace(Texto))
+        {
+            ListaClientes = await n8nService.ObtenerCantidadParking(Texto);
+        }
     }
+    
+    // INFORMES QUESITOS 2: PREFERENCIA VEHICULOS POR PARKING
+    [RelayCommand]
+    public async Task InformeCircular2()
+    {
+        Url = "http://localhost:10000/parking/preferenciaParking/"+ParkingSeleccionado.Id;
+        Console.WriteLine(Url);
+        AbrirWebView();
+    }
+    
+    // INFORMES QUESITOS 3: CANTIDAD INGRESOS POR LOCALIDAD
+    [RelayCommand]
+    public async Task InformeCircular3()
+    {
+        Url = "http://localhost:10000/parking/ingresosParking";
+        Console.WriteLine(Url);
+        AbrirWebView();
+    }
+    
+    // INFORMES LINEAS 1: GASTOS ACUMULADOS DEL CLIENTE POR USO DEL PARKING
+    [RelayCommand]
+    public async Task InformeLineal1()
+    {
+        Url = "http://localhost:10000/parking/gastoAcumulado/"+ClienteSeleccionado.Id;
+        Console.WriteLine(Url);
+        AbrirWebView();
+    }
+    
+    // INFORMES LINEAS 2: TIEMPO ESTACIONADO DE UN VEHICULO
+    [RelayCommand]
+    public async Task InformeLineal2()
+    {
+        Url = "http://localhost:10000/parking/tiempoEstacionado/"+VehiculoSeleccionado.Id;
+        Console.WriteLine(Url);
+        AbrirWebView();
+    }
+    
+    [RelayCommand]
+    public async Task CargarListaVehiculosAsync()
+    {
+        if (!String.IsNullOrWhiteSpace(TextoV))
+        {
+            ListaVehiculos = await n8nService.ObtenerListaVehiculos(TextoV);
+        }
+    }
+    
+    // INFORMES LINEAS 3: TIEMPO ESTACIONADO DE UN VEHICULO
+    [RelayCommand]
+    public async Task InformeLineal3()
+    {
+        Url = "http://localhost:10000/parking/horaPunta/"+ParkingSeleccionado.Id;
+        Console.WriteLine(Url);
+        AbrirWebView();
+    }
+    
 
     
 }

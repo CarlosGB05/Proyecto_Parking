@@ -3,16 +3,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d"
-             d:DesignWidth="800"
-             d:DesignHeight="450"
+             mc:Ignorable="d"  d:DesignWidth="1750" d:DesignHeight="830"
+             Height="830" Width="1750"
              x:DataType="viewModels:MainWindowViewModel"
-             x:Class="InformeEventos.Views.CircularView.InformeLineas3View">
+             x:Class="InformeEventos.Views.CircularView.InformeLineas3View"
+             Background="BlueViolet">
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
-    <Grid ColumnDefinitions="*,*"
-          Margin="20">
+    
+    <Grid ShowGridLines="False" Width="800"
+          Margin="20" HorizontalAlignment="Center">
 
         <!-- ===================== -->
         <!-- COLUMNA IZQUIERDA -->
@@ -20,65 +21,65 @@
         <!-- ===================== -->
         <Border Grid.Column="0"
                 Padding="20"
+                Height="700"
                 CornerRadius="8"
                 Background="WhiteSmoke">
 
             <StackPanel Spacing="12">
 
-                <TextBlock Text="Informe gráfico · Distribución de asistentes por género"
-                           FontSize="18"
-                           FontWeight="Bold" />
+                <TextBlock Text="Informe Lineal 3 · Número de Estacionados por Hora"
+                           FontSize="23"
+                           FontWeight="Bold"
+                           Foreground="Black"
+                           HorizontalAlignment="Center"/>
 
                 <TextBlock TextWrapping="Wrap"
-                           FontSize="14"
+                           FontSize="16"
                            Foreground="DimGray"
                            Text="Este informe muestra un gráfico circular que representa la distribución de los asistentes registrados en el sistema según su género." />
 
                 <TextBlock TextWrapping="Wrap"
-                           FontSize="14"
+                           FontSize="16"
                            Foreground="DimGray"
                            Text="Cada sector del gráfico corresponde a un género distinto, permitiendo analizar visualmente el peso relativo de cada grupo." />
 
                 <TextBlock TextWrapping="Wrap"
-                           FontSize="14"
+                           FontSize="16"
                            Foreground="DimGray"
                            Text="No se aplican filtros en este informe, ofreciendo una visión global de los asistentes." />
 
-            </StackPanel>
-        </Border>
+                <TextBlock Text="Filtros del informe"
+                           FontSize="20"
+                           FontWeight="Bold" 
+                           Foreground="Black"
+                           Margin="0,30,0,0"/>
 
-        <!-- ===================== -->
-        <!-- COLUMNA DERECHA -->
-        <!-- ACCIONES -->
-        <!-- ===================== -->
-        <Border Grid.Column="1"
-                Padding="20"
-                CornerRadius="8"
-                Background="WhiteSmoke"
-                BorderBrush="LightGray"
-                BorderThickness="1">
-
-            <StackPanel Spacing="16">
-
-                <TextBlock Text="Opciones del informe"
-                           FontSize="16"
-                           FontWeight="Bold" />
-
-                <TextBlock Text="Este informe no requiere filtros."
-                           FontSize="13"
-                           Foreground="DimGray" />
-
-                <Separator />
-
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Right">
-
-                    <Button Content="Generar gráfico"
-                            Width="150"
-                            Height="36"
-                             />
+                
+                <!-- Ubicación -->
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Indica el nombre del Parking"
+                               FontSize="16"
+                               Foreground="DimGray"
+                               Margin="0,5,0,15"
+                               HorizontalAlignment="Center"/>
+                    <ComboBox PlaceholderText="    Selecciona parking"
+                              Background="Black" CornerRadius="20"
+                              Width="450" Height="45" FontSize="18"
+                              Name="ComboParking"
+                              ItemsSource="{Binding ListaParking}" 
+                              SelectedItem="{Binding ParkingSeleccionado}"/>
                 </StackPanel>
-
+            
+                <Separator />
+                
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Button Content="Generar informe" FontSize="18"
+                            Width="170" Height="40" Margin="0,0,10,0"
+                            Command="{Binding InformeLineal3Command}" />
+                </StackPanel>
+                
             </StackPanel>
         </Border>
 

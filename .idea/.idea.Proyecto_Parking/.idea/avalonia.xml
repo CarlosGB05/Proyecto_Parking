@@ -13,7 +13,10 @@
         <entry key="Proyecto_Parking/Views/CircularView/Ejemplo2CircularView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/Dialogs/FicheroPDF.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/InformesBarras/InformeBarras1View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesBarras/InformeBarras2View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/InformesBarras/InformeBarras3View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesCirculares/InformeCircular1View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesCirculares/InformeCircular2View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/InformesCirculares/InformeCircular3View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/InformesGenerales/Ejemplo1InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/InformesGenerales/Ejemplo2InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
@@ -24,6 +27,7 @@
         <entry key="Proyecto_Parking/Views/InformesGenerales/InformeGeneral3View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/InformesGenerales/InformeGeneral4View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/InformesLineas/InformeCircular1View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
+        <entry key="Proyecto_Parking/Views/InformesLineas/InformeLineas1View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/InformesLineas/InformeLineas2View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/InformesLineas/InformeLineas3View.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />
         <entry key="Proyecto_Parking/Views/InformesViews/Ejemplo1InformesView.axaml" value="Proyecto_Parking/Proyecto_Parking.csproj" />

@@ -70,6 +70,7 @@
                             Width="170" Height="40" Margin="0,0,10,0"
                             Command="{Binding InformesGenerales1Command}" />
                 </StackPanel>
+                
             </StackPanel>
         </Border>
     </Grid>

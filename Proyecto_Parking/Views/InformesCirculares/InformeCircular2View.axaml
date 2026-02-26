@@ -3,16 +3,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d"
-             d:DesignWidth="800"
-             d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
+             Height="830" Width="1750"
              x:DataType="viewModels:MainWindowViewModel"
-             x:Class="InformeEventos.Views.CircularView.InformeCircular2View">
+             x:Class="InformeEventos.Views.CircularView.InformeCircular2View"
+             Background="BlueViolet">
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
-    <Grid ColumnDefinitions="*,*"
-          Margin="20">
+    
+    <Grid ShowGridLines="False" Width="800"
+          Margin="20" HorizontalAlignment="Center">
 
     <!-- ===================== -->
     <!-- COLUMNA IZQUIERDA -->
@@ -20,70 +21,63 @@
     <!-- ===================== -->
     <Border Grid.Column="0"
             Padding="20"
+            Height="700"
             CornerRadius="8"
             Background="WhiteSmoke">
 
         <StackPanel Spacing="12">
 
-            <TextBlock Text="Informe gráfico · Distribución de grupos por género musical"
-                       FontSize="18"
-                       FontWeight="Bold"/>
+            <TextBlock Text="Informe Circular 2 · Preferencia Vehiculos por Parking"
+                       FontSize="23"
+                       FontWeight="Bold"
+                       Foreground="Black"
+                       HorizontalAlignment="Center"/>
 
             <TextBlock TextWrapping="Wrap"
-                       FontSize="14"
+                       FontSize="16"
                        Foreground="DimGray"
                        Text="Este informe presenta un gráfico circular que muestra la proporción de grupos registrados según su género musical." />
 
             <TextBlock TextWrapping="Wrap"
-                       FontSize="14"
+                       FontSize="16"
                        Foreground="DimGray"
                        Text="El usuario puede aplicar un filtro para limitar el análisis a los grupos de un país concreto." />
 
             <TextBlock TextWrapping="Wrap"
-                       FontSize="14"
+                       FontSize="16"
                        Foreground="DimGray"
                        Text="Cada sector del gráfico representa un género musical diferente." />
-
-        </StackPanel>
-    </Border>
-
-    <!-- ===================== -->
-    <!-- COLUMNA DERECHA -->
-    <!-- FILTROS -->
-    <!-- ===================== -->
-    <Border Grid.Column="1"
-            Padding="20"
-            CornerRadius="8"
-            Background="WhiteSmoke"
-            BorderBrush="LightGray"
-            BorderThickness="1">
-
-        <StackPanel Spacing="16">
-
+            
             <TextBlock Text="Filtros del informe"
-                       FontSize="16"
-                       FontWeight="Bold"/>
+                       FontSize="20"
+                       FontWeight="Bold" 
+                       Foreground="Black"
+                       Margin="0,30,0,0"/>
 
-            <!-- País -->
+                
+            <!-- Ubicación -->
             <StackPanel Spacing="4">
-                <TextBlock Text="País del grupo"
-                           FontSize="13"
-                           Foreground="DimGray"/>
-                <ComboBox PlaceholderText="Seleccionar país"
-                          Name="Generos"
-                          ItemsSource="{Binding GenerosMusicales}"/>
+                <TextBlock Text="Ubicación del Parking"
+                           FontSize="16"
+                           Foreground="DimGray"
+                           Margin="0,5,0,15"
+                           HorizontalAlignment="Center"/>
+                <ComboBox PlaceholderText="    Seleccionar ubicación"
+                          Background="Black" CornerRadius="20"
+                          Width="450" Height="45" FontSize="18"
+                          Name="ComboParking"
+                          ItemsSource="{Binding ListaParking}" 
+                          SelectedItem="{Binding ParkingSeleccionado}"/>
             </StackPanel>
-
-            <Separator/>
-
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Right">
-
-                <Button Content="Generar gráfico"
-                        Width="150"
-                        Height="36"
-                        Command="{Binding GraficoGenerosMusicalesCommand}"
-                        CommandParameter="{Binding ElementName=Generos,Path=SelectedItem}"/>
+            
+            <Separator />
+                
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                <Button Content="Generar informe" FontSize="18"
+                        Width="170" Height="40" Margin="0,0,10,0"
+                        Command="{Binding InformeCircular2Command}" />
             </StackPanel>
 
         </StackPanel>

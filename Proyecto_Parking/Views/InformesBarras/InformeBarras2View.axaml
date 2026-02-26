@@ -3,82 +3,69 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels1="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d"
-             d:DesignWidth="800"
-             d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
+             Height="830" Width="1750"
              x:DataType="viewModels1:MainWindowViewModel"
-             x:Class="InformeEventos.Views.BarrasView.InformeBarras2View">
+             x:Class="InformeEventos.Views.BarrasView.InformeBarras2View"
+             Background="BlueViolet">
     <Design.DataContext>
         <viewModels1:MainWindowViewModel />
     </Design.DataContext>
-    <Grid ColumnDefinitions="*,*"
-          Margin="20">
+    
+    <Grid ShowGridLines="False" Width="800"
+          Margin="20" HorizontalAlignment="Center">
 
         <!-- ENUNCIADO -->
         <Border Grid.Column="0"
                 Padding="20"
+                Height="700"
                 CornerRadius="8"
                 Background="WhiteSmoke">
 
             <StackPanel Spacing="12">
 
-                <TextBlock Text="Informe gráfico 2 · Entradas vendidas por tipo"
-                           FontSize="18"
-                           FontWeight="Bold" />
+                <TextBlock Text="Informe Barras 2 · Ingresos Totales por Marca"
+                           FontSize="23"
+                           FontWeight="Bold"
+                           Foreground="Black"
+                           HorizontalAlignment="Center"/>
 
                 <TextBlock TextWrapping="Wrap"
-                           FontSize="14"
+                           FontSize="16"
                            Foreground="DimGray"
                            Text="Este informe representa mediante un gráfico de barras el número de entradas vendidas por tipo para un festival concreto." />
 
                 <TextBlock TextWrapping="Wrap"
-                           FontSize="14"
+                           FontSize="16"
                            Foreground="DimGray"
                            Text="El usuario debe seleccionar un festival para generar el gráfico correspondiente." />
 
                 <TextBlock TextWrapping="Wrap"
-                           FontSize="14"
+                           FontSize="16"
                            Foreground="DimGray"
                            Text="Cada barra muestra la cantidad de entradas vendidas de un tipo específico (general, VIP, abono)." />
 
-            </StackPanel>
-        </Border>
-
-        <!-- FILTROS -->
-        <Border Grid.Column="1"
-                Padding="20"
-                CornerRadius="8"
-                Background="WhiteSmoke"
-                BorderBrush="LightGray"
-                BorderThickness="1">
-
-            <StackPanel Spacing="16">
-
                 <TextBlock Text="Filtros del informe"
-                           FontSize="16"
-                           FontWeight="Bold" />
+                           FontSize="20"
+                           FontWeight="Bold" 
+                           Foreground="Black"
+                           Margin="0,30,0,0"/>
 
-                <StackPanel Spacing="4">
-                    <TextBlock Text="Festival"
-                               FontSize="13"
-                               Foreground="DimGray" />
-                    <ComboBox PlaceholderText="Seleccionar festival"
-                              Name="NombreFest"
-                              ItemsSource="{Binding NombreFestivales}"/>
-                </StackPanel>
+                <!-- Placeholder filtros (no activos aún) -->
+                <TextBlock Text="Este informe no requiere filtros."
+                           FontSize="16"
+                           Foreground="DimGray" />
 
                 <Separator />
-
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Right">
-
-                    <Button Content="Generar gráfico"
-                            Width="150"
-                            Height="36"
-                            Command="{Binding GraficoEntradasPorTipoCommand}"
-                            CommandParameter="{Binding ElementName=NombreFest,Path=SelectedItem}"/>
+                
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Button Content="Generar informe" FontSize="18"
+                            Width="170" Height="40" Margin="0,0,10,0"
+                            Command="{Binding InformeBarras2Command}" />
                 </StackPanel>
-
+                
             </StackPanel>
         </Border>
 
