@@ -3,14 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels1="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
-             Height="830" Width="1750"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="930"
+             Height="930" Width="1750"
              x:DataType="viewModels1:MainWindowViewModel"
-             x:Class="InformeEventos.Views.BarrasView.InformeBarras2View"
-             Background="BlueViolet">
+             x:Class="InformeEventos.Views.BarrasView.InformeBarras2View">
+    
     <Design.DataContext>
         <viewModels1:MainWindowViewModel />
     </Design.DataContext>
+    
+    <UserControl.Background>
+        <ImageBrush Source="avares://Proyecto_Parking/Assets/fondo.png"
+                    Stretch="UniformToFill"/>
+    </UserControl.Background>
     
     <Grid ShowGridLines="False" Width="800"
           Margin="20" HorizontalAlignment="Center">
@@ -33,17 +38,20 @@
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Este informe representa mediante un gráfico de barras el número de entradas vendidas por tipo para un festival concreto." />
+                           HorizontalAlignment="Center"
+                           Text="Este informe representa, mediante un gráfico de barras, el volumen total de ingresos generados desglosado por la marca del vehículo." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="El usuario debe seleccionar un festival para generar el gráfico correspondiente." />
+                           HorizontalAlignment="Center"
+                           Text="Cada barra muestra la rentabilidad asociada a una marca específica, permitiendo identificar patrones comerciales y perfiles de consumo según el fabricante." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Cada barra muestra la cantidad de entradas vendidas de un tipo específico (general, VIP, abono)." />
+                           HorizontalAlignment="Center"
+                           Text="Este informe ofrece una comparativa automática de todas las marcas registradas en el sistema, por lo que no requiere filtros manuales." />
 
                 <TextBlock Text="Filtros del informe"
                            FontSize="20"

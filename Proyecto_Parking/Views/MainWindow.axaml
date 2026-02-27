@@ -38,7 +38,7 @@
         <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         
         
@@ -61,7 +61,7 @@
                         <TabControl.Items>
                             <TabItem Width="170" Height="100">
                                 <TabItem.Header>
-                                    <Border Background="BlueViolet" 
+                                    <Border Background="DarkViolet" 
                                             Width="130" Height="60"
                                             CornerRadius="20">
                                         <StackPanel Orientation="Horizontal"
@@ -83,7 +83,7 @@
 
                             <TabItem Width="170" Height="100">
                                 <TabItem.Header>
-                                    <Border Background="BlueViolet" 
+                                    <Border Background="DarkViolet" 
                                             Width="130" Height="60"
                                             CornerRadius="20">
                                         <StackPanel Orientation="Horizontal"
@@ -123,29 +123,6 @@
                                     </Border>
                                 </TabItem.Header>
                                 <informesViews:InformeGeneral3View />
-                            </TabItem>
-                            
-                            
-                            <TabItem Width="170" Height="100">
-                                <TabItem.Header>
-                                    <Border Background="BlueViolet" 
-                                            Width="130" Height="60"
-                                            CornerRadius="20">
-                                        <StackPanel Orientation="Horizontal"
-                                                    HorizontalAlignment="Center">
-                                            <avalonia:MaterialIcon Kind="Garage"
-                                                                   Width="20"
-                                                                   VerticalAlignment="Center"
-                                                                   Height="20" />
-                                            <TextBlock Classes="Centered"
-                                                       VerticalAlignment="Center"
-                                                       Text="Otros" 
-                                                       FontSize="17"
-                                                       Margin="7,0,0,0"/>
-                                        </StackPanel>
-                                    </Border>
-                                </TabItem.Header>
-                                <informesViews:InformeGeneral4View />
                             </TabItem>
                             
                         </TabControl.Items>

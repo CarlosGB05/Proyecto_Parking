@@ -3,11 +3,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
-             Height="830" Width="1750"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="930"
+             Height="930" Width="1750"
              x:DataType="viewModels:MainWindowViewModel"
-             x:Class="InformeEventos.Views.InformesViews.InformeGeneral1View"
-             Background="BlueViolet">
+             x:Class="InformeEventos.Views.InformesViews.InformeGeneral1View">
+    
+    <UserControl.Background>
+        <ImageBrush Source="avares://Proyecto_Parking/Assets/fondo.png"
+                    Stretch="UniformToFill"/>
+    </UserControl.Background>
+    
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
@@ -36,6 +41,7 @@
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
+                           HorizontalAlignment="Center"
                            Text="Este informe muestra un listado general de los clientes registrados en la base de datos.
                            Este listado incluye la información básica de cada cliente: su nombre y apellidos, dni, 
                            telefono movil y el email registrado." />
@@ -43,7 +49,10 @@
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="El objetivo de este informe es ofrecer una visión global de la cantidad de clientes que utilizan nuestra aplicacion a diario, permitiendo analizar cuántos clientes conocen o han utulizado con mayor frecuencia." />
+                           HorizontalAlignment="Center"
+                           Text="El objetivo de este informe es ofrecer una visión global de la cantidad de clientes que utilizan 
+                           nuestra aplicacion a diario, permitiendo analizar cuántos clientes conocen o                      
+                           han utilizado con mayor frecuencia." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"

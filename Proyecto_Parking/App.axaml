@@ -17,7 +17,7 @@
                  <styling:FluentAvaloniaTheme />
                  <avalonia:MaterialIconStyles />
                  <dialogHostAvalonia:DialogHostStyles />
-                 <themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Blue" SecondaryColor="Lime" /> 
+                 <themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Orange" SecondaryColor="Blue" /> 
                  <!-- <FluentTheme /> -->
              </Application.Styles>
 </Application>

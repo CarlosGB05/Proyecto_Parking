@@ -19,7 +19,7 @@
             <Button Content="CERRAR" FontSize="18" Width="170" Height="40"
                     HorizontalAlignment="Center" Margin="0,30,0,0"
                     Command="{Binding OcultarPDFCommand}"
-                    Background="BlueViolet"/>
+                    Background="DarkOrange"/>
         </StackPanel>
     </Grid>
 </UserControl>

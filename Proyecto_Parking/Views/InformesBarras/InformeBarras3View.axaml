@@ -3,14 +3,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
-             Height="830" Width="1750"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="930"
+             Height="930" Width="1750"
              x:DataType="viewModels:MainWindowViewModel"
-             x:Class="InformeEventos.Views.BarrasView.InformeBarras3View"
-             Background="BlueViolet">
+             x:Class="InformeEventos.Views.BarrasView.InformeBarras3View">
+    
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
+    
+    <UserControl.Background>
+        <ImageBrush Source="avares://Proyecto_Parking/Assets/fondo.png"
+                    Stretch="UniformToFill"/>
+    </UserControl.Background>
+    
     <Grid ShowGridLines="False" Width="800"
           Margin="20" HorizontalAlignment="Center">
 
@@ -32,17 +38,20 @@
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Este informe presenta un gráfico de barras comparativo que muestra los ingresos generados por los festivales según su estado." />
+                           HorizontalAlignment="Center"
+                           Text="Este informe presenta un gráfico de barras comparativo que muestra el volumen total de clientes atendidos en cada parking del sistema." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Permite analizar diferencias económicas entre festivales programados, cancelados o finalizados." />
+                           HorizontalAlignment="Center"
+                           Text="Permite analizar y comparar el flujo de usuarios entre las diferentes instalaciones para identificar los puntos de mayor demanda." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="El informe admite filtros opcionales para acotar el análisis por ubicación y rango de fechas." />
+                           HorizontalAlignment="Center"
+                           Text="Al ser una comparativa directa entre todas las sedes, este informe ofrece una visión general y no requiere parámetros de filtrado." />
 
                 <TextBlock Text="Filtros del informe"
                            FontSize="20"

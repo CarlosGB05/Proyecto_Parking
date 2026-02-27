@@ -3,14 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d"  d:DesignWidth="1750" d:DesignHeight="830"
-             Height="830" Width="1750"
+             mc:Ignorable="d"  d:DesignWidth="1750" d:DesignHeight="930"
+             Height="930" Width="1750"
              x:DataType="viewModels:MainWindowViewModel"
-             x:Class="InformeEventos.Views.CircularView.InformeLineas2View"
-             Background="BlueViolet">
+             x:Class="InformeEventos.Views.CircularView.InformeLineas2View">
+    
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
+    
+    <UserControl.Background>
+        <ImageBrush Source="avares://Proyecto_Parking/Assets/fondo.png"
+                    Stretch="UniformToFill"/>
+    </UserControl.Background>
     
     <Grid ShowGridLines="False" Width="800"
           Margin="20" HorizontalAlignment="Center">
@@ -36,17 +41,15 @@
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Este informe muestra un gráfico circular que representa la distribución de los asistentes registrados en el sistema según su género." />
+                           HorizontalAlignment="Center"
+                           Text="Este informe muestra un gráfico circular que representa el tiempo total de un vehiculo que ha estado estacionado." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Cada sector del gráfico corresponde a un género distinto, permitiendo analizar visualmente el peso relativo de cada grupo." />
-
-                <TextBlock TextWrapping="Wrap"
-                           FontSize="16"
-                           Foreground="DimGray"
-                           Text="No se aplican filtros en este informe, ofreciendo una visión global de los asistentes." />
+                           HorizontalAlignment="Center"
+                           Text="Cada sector del gráfico corresponde a un total de horas que ha estado estacionado cierto vehiculo a lo largo del tiempo." />
+                
 
                 <TextBlock Text="Filtros del informe"
                            FontSize="20"

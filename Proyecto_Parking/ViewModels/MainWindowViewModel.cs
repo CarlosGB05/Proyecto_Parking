@@ -43,10 +43,6 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         MarcaVehiculos = await n8nService.ObtenerMarcasVehiculos();
         ListaParking = await n8nService.ObtenerListaParking();
-        
-        ListaGrupos = await n8nService.ObtenerGrupos();
-        NombreFestivales = await n8nService.ObtenerNombreFestivales();
-        GenerosMusicales = await n8nService.ObtenerGenerosMusicales();
     }
     
     [RelayCommand]

@@ -3,14 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
-             Height="830" Width="1750"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="930"
+             Height="930" Width="1750"
              x:DataType="viewModels:MainWindowViewModel"
-             x:Class="InformeEventos.Views.CircularView.InformeCircular3View"
-             Background="BlueViolet">
+             x:Class="InformeEventos.Views.CircularView.InformeCircular3View">
+    
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
+    
+    <UserControl.Background>
+        <ImageBrush Source="avares://Proyecto_Parking/Assets/fondo.png"
+                    Stretch="UniformToFill"/>
+    </UserControl.Background>
     
     <Grid ShowGridLines="False" Width="800"
           Margin="20" HorizontalAlignment="Center">
@@ -36,17 +41,20 @@
             <TextBlock TextWrapping="Wrap"
                        FontSize="16"
                        Foreground="DimGray"
-                       Text="Este informe presenta un gráfico circular que muestra la proporción de grupos registrados según su género musical." />
+                       HorizontalAlignment="Center"
+                       Text="Este informe presenta un gráfico circular que muestra la distribución proporcional de los ingresos generados según su localidad de origen." />
 
             <TextBlock TextWrapping="Wrap"
                        FontSize="16"
                        Foreground="DimGray"
-                       Text="El usuario puede aplicar un filtro para limitar el análisis a los grupos de un país concreto." />
+                       HorizontalAlignment="Center"
+                       Text="Cada sector del gráfico representa una ubicación geográfica diferente, permitiendo visualizar rápidamente qué localidades tienen el mayor impacto en la recaudación total." />
 
             <TextBlock TextWrapping="Wrap"
                        FontSize="16"
                        Foreground="DimGray"
-                       Text="Cada sector del gráfico representa un género musical diferente." />
+                       HorizontalAlignment="Center"
+                       Text="Este informe ofrece una visión global consolidada, por lo que se genera directamente con todos los datos disponibles en el sistema." />
 
             <TextBlock Text="Filtros del informe"
                        FontSize="20"

@@ -3,14 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
-             Height="830" Width="1750"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="930"
+             Height="930" Width="1750"
              x:DataType="viewModels:MainWindowViewModel"
-             x:Class="InformeEventos.Views.CircularView.InformeCircular1View"
-             Background="BlueViolet">
+             x:Class="InformeEventos.Views.CircularView.InformeCircular1View">
+    
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
+    
+    <UserControl.Background>
+        <ImageBrush Source="avares://Proyecto_Parking/Assets/fondo.png"
+                    Stretch="UniformToFill"/>
+    </UserControl.Background>
     
     <Grid ShowGridLines="False" Width="800"
           Margin="20" HorizontalAlignment="Center">
@@ -36,17 +41,19 @@
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Este informe muestra un gráfico circular que representa la distribución de los asistentes registrados en el sistema según su género." />
+                           HorizontalAlignment="Center"
+                           Text="Este informe muestra un gráfico circular que representa la distribución de los parkings asignados o utilizados por un cliente específico dentro del sistema." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Cada sector del gráfico corresponde a un género distinto, permitiendo analizar visualmente el peso relativo de cada grupo." />
+                           HorizontalAlignment="Center"
+                           Text="Cada sector del gráfico corresponde a un parking distinto, permitiendo analizar visualmente el volumen de uso o propiedad que tiene el cliente en cada ubicación." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="No se aplican filtros en este informe, ofreciendo una visión global de los asistentes." />
+                           Text="Para generar este reporte, es necesario introducir el nombre del cliente en el filtro inferior para obtener su visión detallada y personalizada." />
 
                 <TextBlock Text="Filtros del informe"
                            FontSize="20"

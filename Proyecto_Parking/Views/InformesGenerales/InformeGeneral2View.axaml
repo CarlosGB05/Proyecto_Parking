@@ -3,14 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
-             Height="830" Width="1750"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="930"
+             Height="930" Width="1750"
              x:DataType="viewModels:MainWindowViewModel"
-             x:Class="InformeEventos.Views.InformesViews.InformeGeneral2View"
-             Background="BlueViolet">
+             x:Class="InformeEventos.Views.InformesViews.InformeGeneral2View">
+    
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
+    
+    <UserControl.Background>
+        <ImageBrush Source="avares://Proyecto_Parking/Assets/fondo.png"
+                    Stretch="UniformToFill"/>
+    </UserControl.Background>
     
     <Grid ShowGridLines="False" Width="800"
           Margin="20" HorizontalAlignment="Center">
@@ -36,17 +41,20 @@
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Este informe muestra el listado de grupos o artistas que participan en un festival concreto, junto con la información detallada de sus actuaciones." />
+                           HorizontalAlignment="Center"
+                           Text="Este informe muestra un listado de todos los vehiculos registrados a partir de la Marca del vehiculo." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Se incluyen datos como el género musical, la fecha de actuación, la hora de inicio y el escenario asignado a cada grupo." />
+                           HorizontalAlignment="Center"
+                           Text="Se incluyen datos como el Id del registro, la marca, la matricula, el nombre del Cliente y el DNI del cliente." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="El objetivo es ofrecer una visión clara de la programación artística del festival seleccionado." />
+                           HorizontalAlignment="Center"
+                           Text="El objetivo es ofrecer una visión clara de la cantidad de marcas que se utilizan a diario." />
 
                 <TextBlock Text="Filtros del informe"
                            FontSize="20"

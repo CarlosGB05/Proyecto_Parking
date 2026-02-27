@@ -3,14 +3,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels1="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
-             Height="830" Width="1750"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="930"
+             Height="930" Width="1750"
              x:DataType="viewModels1:MainWindowViewModel"
-             x:Class="InformeEventos.Views.BarrasView.InformeBarras1View"
-             Background="BlueViolet">
+             x:Class="InformeEventos.Views.BarrasView.InformeBarras1View">
+    
     <Design.DataContext>
         <viewModels1:MainWindowViewModel />
     </Design.DataContext>
+    
+    <UserControl.Background>
+        <ImageBrush Source="avares://Proyecto_Parking/Assets/fondo.png"
+                    Stretch="UniformToFill"/>
+    </UserControl.Background>
+    
     <Grid ShowGridLines="False" Width="800"
           Margin="20" HorizontalAlignment="Center">
 
@@ -32,17 +38,17 @@
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Este informe muestra un gráfico de barras con los ingresos totales generados por cada festival." />
+                           Text="Este informe muestra un gráfico de barras con los diez clientes que han generado el mayor volumen de gasto en el sistema de parkings." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="No se aplican filtros. El objetivo es obtener una visión global y comparativa del impacto económico de los festivales." />
+                           Text="El objetivo es obtener una visión clara de los perfiles de usuario con mayor impacto económico para facilitar acciones de fidelización." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Cada barra representa un festival y su altura indica el total de ingresos obtenidos." />
+                           Text="Cada barra representa a un cliente individual y su altura indica el total de ingresos obtenidos por sus estancias; el informe se genera automáticamente sin necesidad de filtros." />
 
                 <TextBlock Text="Filtros del informe"
                            FontSize="20"

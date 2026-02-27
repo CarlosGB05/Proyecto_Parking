@@ -3,14 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="830"
-             Height="830" Width="1750"
+             mc:Ignorable="d" d:DesignWidth="1750" d:DesignHeight="930"
+             Height="930" Width="1750"
              x:DataType="viewModels:MainWindowViewModel"
-             x:Class="InformeEventos.Views.InformesViews.InformeGeneral3View"
-             Background="BlueViolet">
+             x:Class="InformeEventos.Views.InformesViews.InformeGeneral3View">
+    
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
+    
+    <UserControl.Background>
+        <ImageBrush Source="avares://Proyecto_Parking/Assets/fondo.png"
+                    Stretch="UniformToFill"/>
+    </UserControl.Background>
     
     <Grid ShowGridLines="False" Width="800"
           Margin="20" HorizontalAlignment="Center">
@@ -35,16 +40,18 @@
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Este informe muestra la información detallada de una entrada concreta, identificada mediante su código o identificador." />
+                           HorizontalAlignment="Center"
+                           Text="Este informe muestra la información detallada de cada Parking registrada en la base de datos." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="El informe permite consultar todos los datos asociados a la entrada, incluyendo información del festival, del asistente y de la compra realizada." />
+                           HorizontalAlignment="Center"
+                           Text="El informe permite consultar todos los datos asociados a cada Parking: su Identificador de la base de datos, el Nombre del Parking, la capacidad máxima de vehículos estacionados, la localidad del Parking y el costo por el precio/hora." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
-                           Text="Este tipo de informe es útil para tareas de verificación, control de accesos o consulta individual de entradas."
+                           Text="Este tipo de informe es útil para verificar la cantidad de Parkings que se encuentran disponibles y su capacidad máxima."
                            Foreground="DimGray" />
                 
                 <TextBlock Text="Filtros del informe"

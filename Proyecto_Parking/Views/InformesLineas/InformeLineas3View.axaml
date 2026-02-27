@@ -3,14 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Proyecto_Parking.ViewModels"
-             mc:Ignorable="d"  d:DesignWidth="1750" d:DesignHeight="830"
-             Height="830" Width="1750"
+             mc:Ignorable="d"  d:DesignWidth="1750" d:DesignHeight="930"
+             Height="930" Width="1750"
              x:DataType="viewModels:MainWindowViewModel"
-             x:Class="InformeEventos.Views.CircularView.InformeLineas3View"
-             Background="BlueViolet">
+             x:Class="InformeEventos.Views.CircularView.InformeLineas3View">
+    
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
+    
+    <UserControl.Background>
+        <ImageBrush Source="avares://Proyecto_Parking/Assets/fondo.png"
+                    Stretch="UniformToFill"/>
+    </UserControl.Background>
     
     <Grid ShowGridLines="False" Width="800"
           Margin="20" HorizontalAlignment="Center">
@@ -36,17 +41,20 @@
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Este informe muestra un gráfico circular que representa la distribución de los asistentes registrados en el sistema según su género." />
+                           HorizontalAlignment="Center"
+                           Text="Este informe presenta un gráfico lineal que detalla la fluctuación de vehículos estacionados a lo largo de las distintas franjas horarias del día." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="Cada sector del gráfico corresponde a un género distinto, permitiendo analizar visualmente el peso relativo de cada grupo." />
+                           HorizontalAlignment="Center"
+                           Text="Cada punto en la línea representa el volumen de ocupación en una hora específica, permitiendo identificar visualmente las horas pico, los momentos de mayor rotación y los periodos de baja demanda dentro de las instalaciones." />
 
                 <TextBlock TextWrapping="Wrap"
                            FontSize="16"
                            Foreground="DimGray"
-                           Text="No se aplican filtros en este informe, ofreciendo una visión global de los asistentes." />
+                           HorizontalAlignment="Center"
+                           Text="A continuación, puedes aplicar filtros por ubicación para obtener una visión detallada de la actividad en un estacionamiento específico." />
 
                 <TextBlock Text="Filtros del informe"
                            FontSize="20"

@@ -45,41 +45,10 @@ public class N8NService
     
     public async Task<AvaloniaList<Vehiculo>?> ObtenerListaVehiculos(string nomb)                      // el ? significa que sigue el metodo aunq reciba algun null
     {
-        var request = new HttpRequestMessage(HttpMethod.Get, "1864de8f-1421-4552-b777-31fa58c8d508/cantidadParking/"+nomb);
+        var request = new HttpRequestMessage(HttpMethod.Get, "c71bf9e2-fbf1-44fc-93eb-617c2e0d0b3f/tiempoEstacionado/"+nomb);
         var response = await client.SendAsync(request);
         var listaString = await response.Content.ReadAsStringAsync();
         return JsonConvert.DeserializeObject<AvaloniaList<Vehiculo>>(listaString);
-    }
-    
-    
-    
-    
-    
-    public async Task<AvaloniaList<string>?> ObtenerGrupos()
-    {
-        var request = new HttpRequestMessage(HttpMethod.Get, "ListaGrupos");
-        
-        var response = await client.SendAsync(request);
-        var listaString = await response.Content.ReadAsStringAsync();
-        return JsonConvert.DeserializeObject<AvaloniaList<string>>(listaString);
-    }
-    
-    public async Task<AvaloniaList<string>?> ObtenerNombreFestivales()
-    {
-        var request = new HttpRequestMessage(HttpMethod.Get, "TotalEntradas");
-        
-        var response = await client.SendAsync(request);
-        var listaString = await response.Content.ReadAsStringAsync();
-        return JsonConvert.DeserializeObject<AvaloniaList<string>>(listaString);
-    }
-    
-    public async Task<AvaloniaList<string>?> ObtenerGenerosMusicales()
-    {
-        var request = new HttpRequestMessage(HttpMethod.Get, "GeneroMusical");
-        
-        var response = await client.SendAsync(request);
-        var listaString = await response.Content.ReadAsStringAsync();
-        return JsonConvert.DeserializeObject<AvaloniaList<string>>(listaString);
     }
     
 }
